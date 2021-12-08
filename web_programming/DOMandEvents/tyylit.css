@@ -1,0 +1,51 @@
+label {
+  display: flex;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 30px;
+}
+
+label span {
+  width: 100px;
+}
+
+label input {
+  margin-left: 5px;
+}
+
+button {
+  margin: 5px;
+  margin-left: 0px;
+}
+
+input {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+form,
+h2 {
+  display: flex;
+}
+
+div {
+  float: left;
+  padding-right: 6em;
+}
+
+select {
+  margin-left: 5px;
+  width: 110px;
+}
+
+.piilota {
+  display: none;
+}
+
+.virhe {
+  color: red;
+}
+
+#leimaukset {
+  float: inline-start;
+}

@@ -1,0 +1,38 @@
+form {
+  width: 25em;
+  float: left;
+  margin-right: 5%;
+}
+
+.joukkueetlistaus {
+  clear: both;
+}
+
+span {
+  text-align: left;
+}
+
+.labeldiv {
+  float: right;
+}
+
+input {
+  float: right;
+}
+
+.leimaustapa {
+  float: right;
+  margin-bottom: 5px;
+}
+
+.sarja {
+  float: right;
+}
+
+.sarjaotsikko {
+  clear: right;
+}
+
+.poistotOikealle {
+  float: left;
+}
