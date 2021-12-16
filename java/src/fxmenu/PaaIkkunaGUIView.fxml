@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import fi.jyu.mit.fxgui.ListChooser?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxmenu.PaaIkkunaGUIController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Tiedosto">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#tallenna" text="Tallenna" />
+                  <MenuItem mnemonicParsing="false" onAction="#poistu" text="Lopeta" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Muokkaa">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#avaaMuokkausNakyma" text="Lisää ateria..." />
+              <MenuItem mnemonicParsing="false" onAction="#avaaMuokkausNakyma" text="Muokkaa ateriaa..." />
+                  <MenuItem mnemonicParsing="false" onAction="#poista" text="Poista ateria..." />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Apua">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#avaaTietoja" text="Tietoa..." />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane fx:id="TabPane" prefWidth="439.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="ArpojaTab" text="Arpoja">
+            <content>
+              <AnchorPane>
+                     <children>
+                        <BorderPane prefWidth="439.0">
+                           <bottom>
+                              <GridPane prefWidth="439.0" BorderPane.alignment="CENTER">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.33333333333334" minWidth="10.0" prefWidth="189.33333333333334" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.33331298828128" minWidth="189.00000000000003" prefWidth="189.00000000000003" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints />
+                                  <RowConstraints />
+                                  <RowConstraints />
+                                    <RowConstraints minHeight="80.0" />
+                                    <RowConstraints maxHeight="60.0" minHeight="80.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="60.0" minHeight="80.0" vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button fx:id="nappiArvo" mnemonicParsing="false" onAction="#avaaArvo" prefHeight="37.333333333333336" text="Arvo" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets top="40.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button fx:id="nappiListaa" mnemonicParsing="false" onAction="#avaaListaus" text="Listaa" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets right="30.0" top="40.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Label prefHeight="39.0" prefWidth="127.0" text="Ateria-aika" GridPane.rowIndex="3">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <font>
+                                          <Font name="Baskerville Old Face" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Pääraaka-aine" GridPane.rowIndex="4">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <font>
+                                          <Font name="Baskerville Old Face" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Lisuke" GridPane.rowIndex="5">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <font>
+                                          <Font name="Baskerville Old Face" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="ateriaAika" minHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                                    <ComboBox fx:id="paa" minHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                                    <ComboBox fx:id="lisu" minHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                                    <Button mnemonicParsing="false" onAction="#nollaaHaku" text="Nollaa" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="10.0" top="40.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="30.0" right="30.0" top="10.0" />
+                                 </padding>
+                              </GridPane>
+                           </bottom>
+                           <top>
+                              <Label text="Menu" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="Baskerville Old Face" size="45.0" />
+                                 </font>
+                                 <BorderPane.margin>
+                                    <Insets bottom="10.0" top="20.0" />
+                                 </BorderPane.margin>
+                              </Label>
+                           </top>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="listaus" text="Listaus">
+            <content>
+              <AnchorPane prefWidth="439.0">
+                     <children>
+                        <BorderPane>
+                           <left>
+                              <BorderPane BorderPane.alignment="CENTER">
+                                 <top>
+                                    <Label text="Haku" BorderPane.alignment="CENTER">
+                                       <BorderPane.margin>
+                                          <Insets top="10.0" />
+                                       </BorderPane.margin>
+                                    </Label>
+                                 </top>
+                                 <center>
+                                    <GridPane maxHeight="140.0" BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.3333740234375" minWidth="10.0" prefWidth="64.00003051757812" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.99996948242188" minWidth="10.0" prefWidth="139.99996948242188" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="35.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="35.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="35.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Aika">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Pää" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Lisuke" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <ComboBox fx:id="ateriaAika2" prefWidth="150.0" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <ComboBox fx:id="paa2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <ComboBox fx:id="lisu2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <Button mnemonicParsing="false" onAction="#haku" text="Hae" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#nollaaHaku" text="Nollaa" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                       </children>
+                                       <BorderPane.margin>
+                                          <Insets left="5.0" right="5.0" top="5.0" />
+                                       </BorderPane.margin>
+                                    </GridPane>
+                                 </center>
+                                 <bottom>
+                                    <ListChooser fx:id="ateriaLista" prefHeight="242.0" prefWidth="167.0" rivit="" BorderPane.alignment="CENTER">
+                                       <BorderPane.margin>
+                                          <Insets bottom="5.0" left="10.0" right="7.0" top="5.0" />
+                                       </BorderPane.margin>
+                                    </ListChooser>
+                                 </bottom>
+                              </BorderPane>
+                           </left>
+                           <center>
+                              <Separator orientation="VERTICAL" BorderPane.alignment="CENTER" />
+                           </center>
+                           <right>
+                              <BorderPane BorderPane.alignment="CENTER">
+                                 <top>
+                                    <Label fx:id="ateriaOtsikko" text="null" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="Baskerville Old Face" size="20.0" />
+                                       </font>
+                                       <BorderPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
+                                       </BorderPane.margin>
+                                    </Label>
+                                 </top>
+                                 <center>
+                                    <Label text="Ainesosat" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="Baskerville Old Face" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </center>
+                                 <bottom>
+                                    <TextArea fx:id="aineAlue" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="314.0" prefWidth="197.0" BorderPane.alignment="CENTER">
+                                       <BorderPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                       </BorderPane.margin>
+                                    </TextArea>
+                                 </bottom>
+                              </BorderPane>
+                           </right>
+                           <bottom>
+                              <BorderPane prefWidth="434.0" BorderPane.alignment="CENTER">
+                                 <top>
+                                    <Separator minWidth="439.0" BorderPane.alignment="CENTER" />
+                                 </top>
+                                 <center>
+                                    <GridPane BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#avaaLisaaAteria" text="Lisää resepti" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                             <GridPane.margin>
+                                                <Insets bottom="15.0" top="5.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#avaaMuokkausNakyma" text="Muokkaa reseptiä" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                             <GridPane.margin>
+                                                <Insets bottom="15.0" top="5.0" />
+                                             </GridPane.margin></Button>
+                                          <Button mnemonicParsing="false" onAction="#poista" text="Poista resepti" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                             <GridPane.margin>
+                                                <Insets bottom="15.0" top="5.0" />
+                                             </GridPane.margin></Button>
+                                       </children>
+                                    </GridPane>
+                                 </center>
+                              </BorderPane>
+                           </bottom>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
